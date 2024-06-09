@@ -1,16 +1,17 @@
-name: Hello-action
-on: 
-  push:
-    branches: 
-      - main
+name: AutoTest-action
+
+on: [push]
 
 jobs:
-  my_hello:
+  my_AutoTest:
     runs-on: [ubuntu-latest]
     
     steps:
       - name: Copying Git repository in container
         uses: actions/checkout@v2
+
+      - name: List current folder
+        run : ls -la
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -20,10 +21,8 @@ jobs:
       - name: Install requests module
         run: pip install requests
 
-      - name: Run hello.py
+      - name: Run autotest test_name_city_program.py
         run: |
-          echo "Run: Hello.py"
-          python hello.py
-
-      - name: Test execution completed
-        run: echo "Test execution completed." 
+          echo "Run: test_name_city_program.py"
+          python test_name_city_program.py
+#          python -m unittest test_name_city_program.py
