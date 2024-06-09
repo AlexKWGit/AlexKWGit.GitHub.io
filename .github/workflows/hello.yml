@@ -9,13 +9,30 @@ jobs:
     runs-on: [ubuntu-latest]
     
     steps:
-      - name: Git clone my repo
-        uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Run python script Hello.py
-        run : |
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install requests module
+        run: pip install requests
+
+      - name: Run hello.py
+        run: |
           echo "Run: Hello.py"
-          hello.py          
+          python hello.py
 
 #      - name: Git clone my repo
 #        uses: actions/checkout@v1
+
+#      - name: Run python script Hello.py
+#        run : |
+#          echo "Run: Hello.py"
+#          hello.py          
+
+#      - name: Git clone my repo
+#        uses: actions/checkout@v1
+
