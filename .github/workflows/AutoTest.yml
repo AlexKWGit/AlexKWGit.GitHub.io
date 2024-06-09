@@ -7,7 +7,7 @@ jobs:
     runs-on: [ubuntu-latest]
     
     steps:
-      - name: Copying Git repository in container
+      - name: Copying files Git repository in container.
         uses: actions/checkout@v2
 
       - name: List current folder
