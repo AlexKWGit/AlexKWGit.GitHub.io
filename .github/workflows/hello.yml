@@ -9,6 +9,9 @@ jobs:
     runs-on: [ubuntu-latest]
     
     steps:
+      - name: Git clone my repo
+        uses: actions/checkout@v1
+
       - name: Run python script Hello.py
         run : |
           echo "Run: Hello.py"
