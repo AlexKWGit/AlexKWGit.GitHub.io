@@ -2,7 +2,7 @@ name: AddMinikubeCluster
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   setup-minikube-cluster:
